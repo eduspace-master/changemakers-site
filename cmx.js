@@ -51,7 +51,7 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
   var $=function(s,r){return (r||document).querySelector(s)};
   var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-  function img(k,alt){return '<img src="assets/img/'+k+'.jpg" alt="'+esc(alt||'')+'">'}
+  function img(k,alt){return '<img src="'+CMX_BASE+'img/'+k+'.jpg" alt="'+esc(alt||'')+'">'}
 
   /* ---------- data ---------- */
   var finals=['안양저축은행','고용노동부','한국농수산식품유통공사','한국도로교통공단','뱅크샐러드','아정네트웍스(아정당)','우아한형제들(배민)','극동유화','구름','한국정보통신진흥협회','제논','GLG 그룹','경기창조경제혁신센터','큐브엔터테인먼트','한국변호사협회','삼덕회계법인'];
@@ -82,7 +82,7 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
   var faqs=[
     ['아직 목표 회사가 정해지지 않았는데 괜찮을까요?','괜찮습니다. 지금까지의 경험과 관심사를 함께 살피는 것부터 시작해요. 신청서에도 아직 모르겠다고 적어 주세요.'],
     ['그룹 프로그램에서도 제 이야기를 따로 봐 주시나요?','네. 그룹 워크숍과 별도로 개인의 경험과 서류를 살피는 피드백을 진행합니다. 주간 체크인과 개별 첨삭, 실무·임원 모의면접을 통해 자신의 준비 상황을 점검합니다. 세부 구성은 커리어서프클럽 안내에서 확인할 수 있습니다.'],
-    ['오프라인은 어디서 모이나요?','서울 강남구 도곡동 샤인스페이스(도곡로1길 10 프린스타워 9층)입니다. 월·목 또는 화·금, 오후 2시부터 7시까지 컨설턴트와 매니저들과 함께 준비합니다.'],
+    ['오프라인은 어디서 모이나요?','서울 강남구 도곡동 샤인스페이스입니다. 화·목 또는 수·금, 오후 2시부터 7시까지 컨설턴트와 매니저들과 함께 준비합니다.'],
     ['온라인에서는 어떻게 참여하나요?','정해진 시간에 실시간으로 접속하고, 온라인 전담 매니저와 준비를 진행합니다. 첨삭과 모의면접은 화상으로 참여합니다. 오리엔테이션·Feast는 현장에서 함께하며, 스타일 데이와 프로필 촬영의 방문 일정은 별도로 안내합니다.'],
     ['너무 지쳐 있는데 따라갈 수 있을까요?','첫 주에는 경험과 고민을 함께 정리하는 데서 시작합니다. 다만 주 2회, 회당 5시간의 참여 일정이 있으니 현재 상황에서 무리 없이 참여할 수 있을지 먼저 상담해 주세요.'],
     ['커리어서프클럽과 프라임클럽은 어떻게 다른가요?','커리어서프클럽은 정해진 일정에 동료들과 함께하는 4주 그룹 프로그램입니다. 프라임클럽은 목표와 준비 상황에 따라 코칭의 우선순위를 조정하는 1:1 과정입니다. 기간과 비용, 제공 항목은 각 프로그램 안내에서 확인해 주세요.'],
@@ -90,7 +90,7 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
     ['신청서를 쓰면 바로 결제되나요?','아니요. 당신을 이해하기 위한 첫 기록입니다. 적어 주신 이야기를 읽고 연락드리며, 상담 후에 프로그램을 함께 고릅니다. 프라임클럽 1:1은 프로그램 페이지에서 바로 결제할 수도 있습니다.']
   ];
   var benefits=[
-    ['한 사람을 위한 전략','매주 · 체크인 15분','주간 체크인에서 개인별 준비 상황과 다음 과제를 확인합니다.'],
+    ['한 사람을 위한 전략','매주 월요일 전략 회의','컨설턴트와 매니저가 Crew 한 사람 한 사람의 준비 상황을 놓고 다음 과제를 정하고, 주간 체크인 15분으로 전합니다.'],
     ['자기소개서 첨삭과 재작성','개별 첨삭과 수정본 검토','내 경험의 의미를 찾고, 기업에 맞는 지원 서류로 구체화합니다. 워크숍 자리에서 바로 다시 씁니다.'],
     ['실무와 임원 모의면접','실무자 면접 · 임원 면접, 각 1회','실제로 답해 보고, 인터뷰에서 더 선명하게 전할 내용을 정리합니다. 피드백을 다음 답변에 반영합니다.'],
     ['개인 이미지 컨설팅','개인별 스타일 제안 · 프로필 촬영','면접 복장과 인상, 자세를 점검하고 프로필 사진으로 기록합니다. 온라인 Crew의 방문 촬영 일정은 별도로 안내합니다.'],
@@ -117,17 +117,17 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
 
   /* calendar */
   if($('#cal')){
-    var crewDays={mt:[7,10,14,17,21,24,28],tf:[8,11,15,18,22,25,29]};
+    var crewDays={mt:[8,10,15,17,22,24,29],tf:[4,9,11,16,18,23,25]};var monDays=[7,14,21,28];
     var wedL={2:'오리엔테이션',30:'Feast'};
     var renderCal=function(c){
       var h=['일','월','화','수','목','금','토'].map(function(d){return '<div class="dh">'+d+'</div>'}).join('');
       var first=new Date(2026,11,1).getDay(),out=h;
       for(var i=0;i<first;i++)out+='<div class="d empty"></div>';
       for(var d=1;d<=31;d++){var cls='d',lab='';
-        if(d===2||d===30){cls+=' big';lab=wedL[d]}else if(wedL[d]){cls+=' wed';lab=wedL[d]}else if(crewDays[c].indexOf(d)>=0){if(d===25){cls+=' hol';lab='성탄절 보강'}else{cls+=' crew';lab='Crew Day'}}
+        if(d===2||d===30){cls+=' big';lab=wedL[d]}else if(wedL[d]){cls+=' wed';lab=wedL[d]}else if(monDays.indexOf(d)>=0){cls+=' wed';lab='전략 회의'}else if(crewDays[c].indexOf(d)>=0){if(d===25){cls+=' hol';lab='성탄절 보강'}else{cls+=' crew';lab='Crew Day'}}
         out+='<div class="'+cls+'"><span class="n">'+d+'</span><span class="l">'+lab+'</span></div>'}
       $('#cal').innerHTML=out;
-      $('#calNote').textContent=c==='mt'?'월·목 Crew: 12월 7일부터 28일까지 Crew Day 7번, 12월 30일 Feast까지 정규 8회 40시간.':'화·금 Crew: 12월 8일부터 29일까지 Crew Day 7번, 12월 30일 Feast까지 정규 8회 40시간. 25일 성탄절 회차는 보강 일정을 따로 안내합니다.';
+      $('#calNote').textContent=c==='mt'?'화·목 Crew: 12월 8일부터 29일까지 Crew Day 7번, 12월 30일 Feast까지 정규 8회 40시간. 매주 월요일에는 컨설턴트와 매니저가 전략 회의에서 Crew 한 사람 한 사람의 다음 과제를 정합니다.':'수·금 Crew: 12월 4일부터 25일까지 Crew Day 7번, 12월 30일 Feast까지 정규 8회 40시간. 25일 성탄절 회차는 보강 일정을 따로 안내합니다. 매주 월요일에는 컨설턴트와 매니저가 전략 회의에서 Crew 한 사람 한 사람의 다음 과제를 정합니다.';
     };
     renderCal('mt');
     $('#calSeg').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;$$('button',this).forEach(function(x){x.classList.toggle('on',x===b)});renderCal(b.dataset.c)});
@@ -155,7 +155,7 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
   function inp(key,type,ph,ac){return '<input type="'+type+'" data-in="'+key+'" value="'+esc(H.d[key])+'" placeholder="'+esc(ph||'')+'"'+(ac?' autocomplete="'+ac+'"':'')+'>'}
   function ta(key,ph){return '<textarea data-in="'+key+'" placeholder="'+esc(ph||'')+'">'+esc(H.d[key])+'</textarea>'}
   var progs=[
-    {g:'커리어서프클럽 · 4주 그룹 · 12월 2일 시작',items:[['surf-mt-off','월·목 오프라인 Crew','14시부터 19시'],['surf-mt-on','월·목 온라인 Crew','14시부터 19시'],['surf-tf-off','화·금 오프라인 Crew','14시부터 19시'],['surf-tf-on','화·금 온라인 Crew','14시부터 19시']]},
+    {g:'커리어서프클럽 · 4주 그룹 · 12월 2일 시작',items:[['surf-mt-off','화·목 오프라인 Crew','14시부터 19시'],['surf-mt-on','화·목 온라인 Crew','14시부터 19시'],['surf-tf-off','수·금 오프라인 Crew','14시부터 19시'],['surf-tf-on','수·금 온라인 Crew','14시부터 19시']]},
     {g:'프라임클럽 · 1:1',items:[['prime-new','신입 취업 프로그램','6주 · 1,800,000원'],['prime-move','경력 이직 프로그램','6주 · 2,400,000원'],['prime-pf','포트폴리오 프로그램','4주 · 990,000원'],['prime-intern','인턴십 프로그램','2,500,000원']]},
     {g:'아직 잘 모르겠어요',items:[['unsure','상담하며 함께 정하고 싶어요','지금의 나에게 맞는 방식을 함께 찾아요']]}
   ];
@@ -196,7 +196,7 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
     var prog='<div class="q-progress">'+steps.map(function(_,i){return '<i class="'+(i<=s?'on':'')+'"></i>'}).join('')+'</div>';
     var nav='<div class="q-nav">'+(s>0?'<button type="button" class="linkbtn" data-hprev>이전 단계</button>':'<span></span>')+'<button type="button" class="btn primary" data-hnext>'+(s===4?'당신의 이야기 보내기':'다음으로')+' <span class="ar">→</span></button></div>';
     root.innerHTML='<div class="form-grid"><div class="panel">'+prog+body+(err?'<p class="err">'+err+'</p>':'')+nav+'</div>'+
-      '<aside class="aside"><div class="ph"><img src="assets/img/at_talk.jpg" alt=""></div><div class="in"><small>What Happens Next</small><h3>이 기록이,<br>첫 상담의 출발점이 됩니다.</h3><ol><li><b>작성</b>지금의 나를 당신의 말로 적어 주세요.</li><li><b>사전 확인</b>담당자가 경험과 고민을 읽고 상담을 준비합니다.</li><li><b>상담</b>목표와 준비 상황을 살피고 필요한 도움을 이야기합니다.</li><li><b>참여 결정</b>과정의 범위와 일정, 비용을 확인한 뒤 참여 여부를 결정합니다.</li></ol><blockquote>“연휴에도 자소서를 정리해 피드백을 보내 주는 모습에서, 혼자가 아니라 함께 준비하고 있다는 걸 느꼈습니다.”<br>한상연, 전 선박 기관사</blockquote></div></aside></div>';
+      '<aside class="aside"><div class="ph"><img src="'+CMX_BASE+'img/at_talk.jpg" alt=""></div><div class="in"><small>What Happens Next</small><h3>이 기록이,<br>첫 상담의 출발점이 됩니다.</h3><ol><li><b>작성</b>지금의 나를 당신의 말로 적어 주세요.</li><li><b>사전 확인</b>담당자가 경험과 고민을 읽고 상담을 준비합니다.</li><li><b>상담</b>목표와 준비 상황을 살피고 필요한 도움을 이야기합니다.</li><li><b>참여 결정</b>과정의 범위와 일정, 비용을 확인한 뒤 참여 여부를 결정합니다.</li></ol><blockquote>“연휴에도 자소서를 정리해 피드백을 보내 주는 모습에서, 혼자가 아니라 함께 준비하고 있다는 걸 느꼈습니다.”<br>한상연, 전 선박 기관사</blockquote></div></aside></div>';
   }
   function validate(){var d=H.d,s=H.step;
     if(s===0){if(!d.name.trim())return '이름을 적어 주세요.';if(!/[0-9]{9,}/.test(d.phone.replace(/[^0-9]/g,'')))return '연락받을 전화번호를 적어 주세요.'}

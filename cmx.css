@@ -4,11 +4,17 @@ body.cmx-on #doz_header_wrap, body.cmx-on #doz_footer_wrap{display:none!importan
 body.cmx-on{background:#f5f7fb!important;overflow-x:hidden}
 body.cmx-on .section_wrap{padding:0!important}
 body.cmx-on .section_wrap .inside, body.cmx-on .section_wrap .container, body.cmx-on .section_wrap .row, body.cmx-on .section_wrap [class*="col-"], body.cmx-on .section_wrap .widget{padding-left:0!important;padding-right:0!important;max-width:none!important;width:100%!important;margin-left:0!important;margin-right:0!important}
-#cmx{position:relative;width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);text-align:left;line-height:normal;letter-spacing:normal}
+#cmx :where(*:not(svg,svg *)){all:revert}
+#cmx{position:relative;width:100%;max-width:100%;margin:0;text-align:left;line-height:normal;letter-spacing:normal}
 #cmx a:hover{text-decoration:none}
 #cmx ul,#cmx ol{margin:0;padding:0}
 #cmx li{list-style:none}
 #cmx input,#cmx textarea{font-family:inherit}
+#cmx .btn.ghost{background:transparent!important}
+#cmx .btn.ghost:hover{background:rgba(255,255,255,.08)!important}
+#cmx .nav-sub{font-size:12px;font-weight:700;color:#fff;padding:12px 14px;border:1px solid rgba(255,255,255,.32);border-radius:6px;white-space:nowrap}
+#cmx .nav-sub:hover{border-color:#fff}
+@media (max-width:980px){#cmx .nav-sub{display:none}}
 #cmx .acct{display:flex;gap:14px;align-items:center;font-size:12px;font-weight:600;color:rgba(255,255,255,.66)}
 #cmx .acct a:hover{color:#fff}
 @media (max-width:980px){#cmx .acct{display:none}}
