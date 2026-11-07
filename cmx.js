@@ -157,6 +157,7 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
   var progs=[
     {g:'커리어서프클럽 · 4주 그룹 · 12월 2일 시작',items:[['surf-mt-off','화·목 오프라인 Crew','14시부터 19시'],['surf-mt-on','화·목 온라인 Crew','14시부터 19시'],['surf-tf-off','수·금 오프라인 Crew','14시부터 19시'],['surf-tf-on','수·금 온라인 Crew','14시부터 19시']]},
     {g:'프라임클럽 · 1:1',items:[['prime-new','신입 취업 프로그램','6주 · 1,800,000원'],['prime-move','경력 이직 프로그램','6주 · 2,400,000원'],['prime-pf','포트폴리오 프로그램','4주 · 990,000원'],['prime-intern','인턴십 프로그램','2,500,000원']]},
+    {g:'추가 과정 · 서프클럽 Crew 한정',items:[['interview-2w','심층면접대비 2주 과정','Crew 한정가 290,000원']]},
     {g:'아직 잘 모르겠어요',items:[['unsure','상담하며 함께 정하고 싶어요','지금의 나에게 맞는 방식을 함께 찾아요']]}
   ];
   function progLabel(v){var r='';progs.forEach(function(g){g.items.forEach(function(it){if(it[0]===v)r=it[1]})});return r}
@@ -215,8 +216,26 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
   });
   function scrollTop(){var y=root.getBoundingClientRect().top+window.scrollY-110;window.scrollTo({top:Math.max(0,y),behavior:'smooth'})}
   var qp=(location.search.match(/[?&]p=(\w+)/)||[])[1];
-  if(qp==='surf')H.d.prog='surf-mt-off';if(qp==='prime')H.d.prog='prime-new';
+  if(qp==='surf')H.d.prog='surf-mt-off';if(qp==='prime')H.d.prog='prime-new';if(qp==='interview')H.d.prog='interview-2w';
   renderHello();
 
   }
+})();
+
+/* crew journey motion */
+(function(){
+  var j=document.getElementById('journey');if(!j)return;
+  var steps=[].slice.call(j.querySelectorAll('.jn-step')),fill=j.querySelector('.jn-fill'),dot=j.querySelector('.jn-dot'),n=steps.length,i=-1,t=null;
+  function vert(){return window.matchMedia('(max-width:900px)').matches}
+  function set(k){
+    steps.forEach(function(s,x){s.classList.toggle('on',x<=k);s.classList.toggle('now',x===k)});
+    if(vert()){var a=steps[0],b=steps[Math.max(k,0)],h=b.offsetTop+b.offsetHeight/2-(a.offsetTop+a.offsetHeight/2);var base=a.offsetTop+a.offsetHeight/2;fill.parentNode.style.top=base+'px';fill.parentNode.style.bottom='auto';fill.parentNode.style.height=(steps[n-1].offsetTop+steps[n-1].offsetHeight/2-base)+'px';fill.style.height=h+'px';dot.style.top=h+'px'}
+    else{fill.parentNode.style.top='';fill.parentNode.style.height='';var p=(Math.max(k,0)/(n-1)*100)+'%';fill.style.width=p;dot.style.left=p}
+  }
+  function tick(){i++;if(i>=n){clearInterval(t);setTimeout(function(){i=-1;set(0);t=setInterval(tick,1300)},2600);return}set(i)}
+  set(0);
+  var started=false;
+  function go(){if(started)return;started=true;i=-1;t=setInterval(tick,1300)}
+  if('IntersectionObserver' in window){new IntersectionObserver(function(es){if(es[0].isIntersecting)go()},{threshold:.3}).observe(j)}else go();
+  window.addEventListener('resize',function(){set(Math.max(i,0))});
 })();
