@@ -1187,6 +1187,11 @@ body.cmx-on .section_wrap .inside, body.cmx-on .section_wrap .container, body.cm
 #cmx .hero.photo .hero-photo::after{background:linear-gradient(180deg,#0b1530 0%,rgba(11,21,48,.35) 35%,rgba(11,21,48,.1) 100%)}
 }
 
+#cmx .advisory{margin-top:64px;padding:40px 44px;border-radius:20px;background:#fff;border:1px solid rgba(0,0,0,.08);border-left:4px solid var(--brand)}
+#cmx .advisory h3{font-size:24px;font-weight:700;margin:8px 0 12px;letter-spacing:-.02em}
+#cmx .advisory p{font-size:16px;line-height:1.75;color:#444;margin:0;max-width:720px}
+@media(max-width:720px){#cmx .advisory{margin-top:44px;padding:28px 22px}#cmx .advisory h3{font-size:20px}}
+
 /* Design refinement layer over v1. Copy, structure and images are unchanged.
    Typefaces stay as v1 (DM Sans + Noto Sans KR). This file normalizes the type system
    (em-based tracking, display line-heights, a 14px floor for body text) and unifies the color fields. */
