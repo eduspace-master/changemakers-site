@@ -1416,3 +1416,6 @@ body.cmx-on .section_wrap .inside, body.cmx-on .section_wrap .container, body.cm
 @media (max-width:560px){#cmx .bigstats strong{font-size:clamp(32px,10vw,44px);letter-spacing:-.04em}#cmx .bigstats strong small{font-size:18px}}
 @media (max-width:400px){#cmx .pile{transform:scale(.86);transform-origin:center}}
 #cmx,#cmx{overflow-x:clip}
+
+#cmx .row::before,#cmx .row::after,#cmx .nav::before,#cmx .nav::after{content:none!important;display:none!important}
+#cmx .ai-era>.bg{padding:0!important}
