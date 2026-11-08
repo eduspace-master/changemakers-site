@@ -20,7 +20,7 @@ body.cmx-on .section_wrap .inside, body.cmx-on .section_wrap .container, body.cm
 @media (max-width:980px){#cmx .acct{display:none}}
 #cmx{
   --blue:#155df0;--blue-d:#0f49c2;--ink:#0b1530;--cream:#f5f7fb;--muted:#667085;--lime:#aac5ff;--line:#dfe5ee;
-  --white:#fff;--soft:#eaf0fd;--mint:#5ee0a0;--paper:#f8f6f1;--sky:#eef3fb;--ink-line:rgba(255,255,255,.14);--ink-muted:rgba(255,255,255,.66);
+  --white:#fff;--soft:#eaf0fd;--mint:#ff7eb6;--paper:#f8f6f1;--sky:#eef3fb;--ink-line:rgba(255,255,255,.14);--ink-muted:rgba(255,255,255,.66);
   --r:16px;--sh:0 18px 50px rgba(11,21,48,.10);
   color-scheme:light;
 }
@@ -44,7 +44,7 @@ body.cmx-on .section_wrap .inside, body.cmx-on .section_wrap .container, body.cm
 #cmx .nav a{font-size:12px;font-weight:600;color:var(--ink-muted);transition:color .2s;display:inline-flex;align-items:center;gap:6px}
 #cmx .nav a:hover,#cmx .nav a.on{color:#fff}
 #cmx .nav .dot{width:6px;height:6px;border-radius:50%;background:var(--mint)}
-#cmx .tag11{font-size:9px;font-weight:800;color:var(--mint);letter-spacing:.5px;border:1px solid rgba(94,224,160,.5);padding:2px 5px;border-radius:4px;line-height:1}
+#cmx .tag11{font-size:9px;font-weight:800;color:var(--mint);letter-spacing:.5px;border:1px solid rgba(255,126,182,.5);padding:2px 5px;border-radius:4px;line-height:1}
 #cmx .nav-cta{font-size:12px;font-weight:700;background:var(--blue);color:#fff;padding:12px 18px;border-radius:6px;white-space:nowrap}
 #cmx .menu-btn{display:none;background:none;border:1px solid var(--ink-line);color:#fff;font-size:12px;font-weight:600;padding:10px 14px;border-radius:6px}
 #cmx .mobile-nav{position:fixed;inset:calc(88px + env(safe-area-inset-top,0px)) 0 0;background:var(--ink);z-index:45;padding:24px max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:4px;overflow:auto}
@@ -52,7 +52,7 @@ body.cmx-on .section_wrap .inside, body.cmx-on .section_wrap .container, body.cm
 #cmx .mobile-nav .tag11{font-size:10px;padding:3px 6px}
 #cmx .announce{position:sticky;top:calc(88px + env(safe-area-inset-top,0px));z-index:49;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;gap:18px;padding:11px max(16px,env(safe-area-inset-right,0px)) 11px max(16px,env(safe-area-inset-left,0px));font-size:13px;flex-wrap:wrap;text-align:center}
 #cmx .announce b{display:inline-flex;align-items:center;gap:8px;font-weight:800}
-#cmx .announce b i{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 0 rgba(94,224,160,.7);animation:pulse 2s infinite}
+#cmx .announce b i{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 0 rgba(255,126,182,.7);animation:pulse 2s infinite}
 @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(94,224,160,0)}100%{box-shadow:0 0 0 0 rgba(94,224,160,0)}}
 #cmx .announce span{opacity:.9}
 #cmx .announce a{font-weight:800;background:#fff;color:var(--blue);padding:7px 14px;border-radius:30px;font-size:12px}
@@ -95,7 +95,7 @@ body.cmx-on .section_wrap .inside, body.cmx-on .section_wrap .container, body.cm
 #cmx .ph img{width:100%;height:100%;object-fit:cover}
 #cmx .live{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;color:#fff;background:var(--blue);padding:7px 12px;border-radius:30px}
 #cmx .live i{width:7px;height:7px;border-radius:50%;background:var(--mint)}
-#cmx .live.mint{background:rgba(94,224,160,.16);color:#8ff0bf}
+#cmx .live.mint{background:rgba(255,126,182,.16);color:#ffb3d3}
 #cmx .summary-geo{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;margin:-1px}
 #cmx .on-dark .summary-geo{color:rgba(255,255,255,.8)}
 
@@ -919,7 +919,7 @@ body.cmx-on .section_wrap .inside, body.cmx-on .section_wrap .container, body.cm
 #cmx .meet h1{font-size:clamp(52px,8.6vw,132px);font-weight:800;line-height:1.02;letter-spacing:-5px;margin-top:22px}
 #cmx .meet h1 em{font-style:normal;color:var(--lime)}
 #cmx .meet .sub{font-size:clamp(22px,2.6vw,36px);font-weight:700;letter-spacing:-1.2px;line-height:1.35;margin-top:22px;max-width:760px}
-#cmx .meet .sub b{color:var(--mint);font-weight:700}
+#cmx .meet .sub b{color:#fff;font-weight:700}
 #cmx .meet-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:end;margin-top:40px}
 #cmx .meet-grid>*{min-width:0}
 #cmx .meet .lead{color:var(--ink-muted);max-width:640px;margin-top:0}
@@ -1307,6 +1307,35 @@ body.cmx-on .section_wrap .inside, body.cmx-on .section_wrap .container, body.cm
 #cmx .buystrip .r s{display:block;margin:0 0 2px}
 #cmx .buystrip .r em.tag{display:inline-block;font-style:normal;font-size:11px;font-weight:800;background:#fff;color:var(--blue);padding:3px 9px;border-radius:20px;margin-left:8px;vertical-align:middle}
 #cmx td.us s{color:var(--muted);margin-right:4px}
+
+
+/* Option A subtle: blue gradients + rare pink points */
+#cmx{--g-blue:linear-gradient(135deg,#2f6bff 0%,#1d4fe0 55%,#1a3bb5 100%);--g-pink:linear-gradient(100deg,#6f8dff 0%,#b07cff 55%,#ff7eb6 100%);--pink:#ff6fae}
+#cmx .btn.primary{background:var(--g-blue);box-shadow:0 10px 24px -10px rgba(29,79,224,.6)}
+#cmx .btn.primary:hover{background:linear-gradient(135deg,#1d4fe0,#16349c)}
+#cmx .announce{background:linear-gradient(90deg,#1d4fe0,#2f6bff 50%,#1d4fe0)}
+#cmx .announce b i{background:var(--pink)!important;box-shadow:0 0 0 4px rgba(255,111,174,.25)}
+#cmx .price-box{background:linear-gradient(135deg,#2f6bff 0%,#1d4fe0 50%,#1a3299 100%)!important;position:relative;overflow:hidden}
+#cmx .price-box::after{content:"";position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,111,174,.35),transparent 65%);pointer-events:none}
+#cmx .price-box .was b,#cmx .buystrip .r em.tag,#cmx .ad-price span{background:var(--g-pink)!important;color:#fff!important;-webkit-text-fill-color:#fff}
+#cmx .ad-price span{display:inline-block!important;padding:3px 10px;border-radius:20px;margin-top:8px!important}
+#cmx .buystrip{background:linear-gradient(135deg,#2f6bff,#1a3bb5)!important}
+#cmx .hero h1 em,#cmx .hero h1 .em,#cmx .meet h1 em{background:var(--g-pink)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;-webkit-text-fill-color:transparent!important}
+#cmx .final .bg::after{background:linear-gradient(160deg,rgba(14,24,58,.96) 0%,rgba(28,48,118,.88) 60%,rgba(40,70,170,.8) 100%),radial-gradient(circle at 85% 90%,rgba(255,111,174,.28),transparent 45%)!important}
+#cmx .jn-fill{background:linear-gradient(90deg,#1d4fe0,#7a6dff 70%,#ff6fae)!important}
+#cmx .jn-step.now .jn-ic{background:linear-gradient(135deg,#7a6dff,#ff6fae)!important;border-color:#ff6fae!important}
+#cmx .jn-dot{background:#ff6fae!important;box-shadow:0 0 0 6px rgba(255,111,174,.22),0 6px 16px rgba(255,111,174,.45)!important}
+#cmx .manifesto .mf-panel::after{background:linear-gradient(180deg,rgba(29,79,224,.1) 0%,rgba(29,79,224,.35) 45%,rgba(22,52,156,.94) 100%),radial-gradient(circle at 90% 100%,rgba(255,111,174,.35),transparent 50%)!important}
+#cmx .ob-you{background:var(--g-blue)!important}
+#cmx .ob-core .pulse{background:rgba(176,124,255,.25)!important}
+
+
+#cmx .nav .dot,#cmx .live i,#cmx .buycard li::before,#cmx .battery .fill{background:#ff7eb6!important}
+#cmx .tag11{color:#ff7eb6!important;border-color:rgba(255,126,182,.5)!important}
+#cmx .live.mint{background:rgba(255,126,182,.16)!important;color:#ffb3d3!important}
+#cmx .meet .sub b{color:#fff!important}
+#cmx .btn.primary{background:var(--g-blue)!important}
+#cmx .btn.primary:hover{background:linear-gradient(135deg,#1d4fe0,#16349c)!important}
 
 /* Design refinement layer over v1. Copy, structure and images are unchanged.
    Typefaces stay as v1 (DM Sans + Noto Sans KR). This file normalizes the type system
