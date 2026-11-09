@@ -1934,3 +1934,73 @@ body.cmx-on .section_wrap .inside, body.cmx-on .section_wrap .container, body.cm
 @media (max-width:1100px){#cmx .pcards{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:760px){#cmx .pcard.feat{flex-direction:column}#cmx .pcard.feat .pc-img{min-height:0;aspect-ratio:16/10}#cmx .pcard.feat .pc-body{padding:26px 22px}#cmx .pcards{grid-template-columns:1fr}}
 #cmx .pc-img img{display:block;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;max-width:none}
+
+/* ===== Subpage hero (V10): beige, text left, photo right with faces ===== */
+#cmx .subhero{background:var(--paper)!important;color:var(--ink)!important;min-height:600px;display:flex;align-items:center}
+#cmx .subhero .bg{position:absolute!important;inset:auto!important;right:4.5%!important;top:56px!important;bottom:56px!important;width:41%!important;border-radius:4px;overflow:hidden}
+#cmx .subhero .bg::after{display:none!important}
+#cmx .subhero .bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+#cmx .subhero .section{padding-block:96px!important;width:91%;max-width:1360px}
+#cmx .subhero .section>*:not(.summary-geo){max-width:50%}
+#cmx .subhero h1{font-size:clamp(44px,4.4vw,70px)!important;font-weight:800!important;letter-spacing:-.045em!important;line-height:1.14!important;color:var(--ink)!important}
+#cmx .subhero h1 em{color:var(--blue)!important}
+#cmx .subhero .lead{color:#4a5568!important;font-size:18px!important;line-height:1.75!important}
+#cmx .subhero .crumbs,#cmx .subhero .crumbs a{color:#6b7484!important}
+#cmx .subhero .eyebrow{color:var(--blue)!important}
+#cmx .subhero .btn.ghost{color:var(--ink)!important}
+#cmx .subhero .tag,#cmx .subhero .chip{background:#fff!important;color:var(--ink)!important;border:1px solid var(--line)!important}
+@media (max-width:900px){#cmx .subhero{display:block;min-height:0}#cmx .subhero .section{padding-block:56px 28px!important}#cmx .subhero .section>*:not(.summary-geo){max-width:none}#cmx .subhero .bg{position:relative!important;right:auto!important;top:auto!important;bottom:auto!important;width:91%!important;margin:0 auto 48px;aspect-ratio:4/3}}
+
+/* line-based promise cards (no boxes) */
+#cmx .promise3{gap:0!important;border-top:1px solid var(--ink)}
+#cmx .promise3>div{background:none!important;border:0!important;border-right:1px solid var(--line)!important;border-radius:0!important;padding:32px 28px 8px 0!important;margin-right:28px}
+#cmx .promise3>div:last-child{border-right:0!important;margin-right:0}
+#cmx .promise3 b{font-size:13px!important}
+#cmx .promise3 h3{font-size:22px!important;font-weight:800!important}
+#cmx .promise3 p{font-size:16px!important}
+@media (max-width:860px){#cmx .promise3>div{border-right:0!important;border-bottom:1px solid var(--line)!important;margin-right:0;padding:26px 0!important}}
+
+/* ===== Manifesto v2 ===== */
+#cmx .mf2{background:var(--paper)}
+#cmx .mf2 .section{padding-block:112px 112px}
+#cmx .mf2-top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;padding-bottom:36px;border-bottom:1px solid var(--ink)}
+#cmx .mf2-top .en-title{color:var(--ink)!important;margin:0!important}
+#cmx .mf2-sub{font-size:clamp(24px,2.4vw,34px);font-weight:800;letter-spacing:-.035em;line-height:1.3;text-align:right;margin:0;color:var(--blue)}
+#cmx .mf2-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);column-gap:32px}
+#cmx .mf2-list li{padding:28px 0 34px;border-bottom:1px solid var(--line);min-width:0}
+#cmx .mf2-list li span{display:block;font-size:13px;font-weight:800;color:var(--blue);letter-spacing:.08em}
+#cmx .mf2-list li p{font-size:17px;line-height:1.75;margin:14px 0 0;color:var(--ink);word-break:keep-all}
+#cmx .mf2-end{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:64px}
+#cmx .mf2-ph{aspect-ratio:16/10;border-radius:4px;overflow:hidden}
+#cmx .mf2-ph img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+#cmx .mf2-last p{font-size:clamp(28px,3vw,44px);font-weight:800;letter-spacing:-.04em;line-height:1.3;margin:0}
+#cmx .mf2-last p em{font-style:normal;color:var(--blue)}
+#cmx .mf2-last small{display:block;margin-top:20px;font-size:15px;color:#6b7484}
+@media (max-width:1000px){#cmx .mf2-list{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){#cmx .mf2 .section{padding-block:72px}#cmx .mf2-top{display:block}#cmx .mf2-sub{text-align:left;margin-top:16px}#cmx .mf2-list{grid-template-columns:1fr}#cmx .mf2-end{grid-template-columns:1fr;gap:28px}}
+#cmx .subhero .section{padding-inline:0!important;margin-inline:auto!important}
+#cmx .subhero .section>*:not(.summary-geo){max-width:52%}
+#cmx .subhero h1{font-size:clamp(40px,3.9vw,62px)!important}
+#cmx .subhero .live,#cmx .subhero .live.mint{background:#fff!important;color:var(--ink)!important;border:1px solid var(--line)!important}
+#cmx .subhero .live i,#cmx .subhero .live::before{background:var(--blue)!important}
+/* imweb global footer section (our footer widget): beige and no empty rows */
+#cmx .section_wrap:has(.cmxgf){background:#f6f5f1!important}
+#cmx .section_wrap:has(.cmxgf) .doz_row:not(:has(.cmxgf)){display:none!important}
+#cmx .pcard.addon{flex-direction:row;align-items:stretch;margin-top:20px}
+#cmx .pcard.addon .pc-img{flex:0 0 260px;aspect-ratio:auto;min-height:180px}
+#cmx .pcard.addon .pc-body{padding:28px 32px}
+#cmx .pcard.addon h3{font-size:24px!important}
+#cmx .pcard.addon .pc-side{display:flex;flex-direction:column;justify-content:center;align-items:flex-end;gap:14px;padding:28px 36px;border-left:1px solid var(--line);flex:0 0 300px}
+#cmx .pcard.addon .pc-price{margin:0;padding:0}
+#cmx .pcard.addon .btn{margin:0}
+@media (max-width:760px){#cmx .pcard.addon{flex-direction:column}#cmx .pcard.addon .pc-img{flex:none;aspect-ratio:16/9}#cmx .pcard.addon .pc-side{border-left:0;border-top:1px solid var(--line);align-items:flex-start;flex:none;padding:22px}}
+/* situ3: line-based instead of sky boxes */
+#cmx .situ3{gap:0!important;border-top:1px solid var(--ink)}
+#cmx .situ3>div{background:none!important;border-radius:0!important;border-right:1px solid var(--line);padding:30px 28px 30px 0!important;margin-right:28px}
+#cmx .situ3>div:last-child{border-right:0;margin-right:0}
+#cmx .situ3 h3{font-size:22px!important;font-weight:800!important}
+#cmx .situ3 p{font-size:16px!important}
+#cmx .situ3 .go a{border-radius:4px!important}
+@media(max-width:860px){#cmx .situ3>div{border-right:0;border-bottom:1px solid var(--line);margin-right:0;padding:24px 0!important}}
+#cmx .plus{border-radius:4px!important}
+#cmx .pcard{padding:0!important}
