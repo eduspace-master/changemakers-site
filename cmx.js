@@ -103,9 +103,9 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
   /* ---------- render ---------- */
   var el;
   if(el=$('#bubbles')){var pick=[1,5,6],bcls=['','r',''];el.innerHTML=pick.map(function(k,i){return '<div class="bubble '+bcls[i]+'">'+voices[k]+'<small>익명 인터뷰 '+String(k+1).padStart(2,'0')+'</small></div>'}).join('')}
-  function storyCard(s){var u='/records/?bmode=view&idx='+s.id;return '<article class="story"><a class="ph" href="'+u+'">'+img(s.k,s.n+'님')+'</a><div class="body"><div class="who"><b>'+s.n+'</b><span class="res'+(s.w?' wait':'')+'">'+s.r+'</span></div><h3>'+s.h+'</h3><p class="exc">'+s.full[0]+'</p><a class="more" href="'+u+'">전체 이야기 읽기 →</a></div></article>'}
+  function storyCard(s){var u='/stories/?bmode=view&idx='+s.id;return '<article class="story"><a class="ph" href="'+u+'">'+img(s.k,s.n+'님')+'</a><div class="body"><div class="who"><b>'+s.n+'</b><span class="res'+(s.w?' wait':'')+'">'+s.r+'</span></div><h3>'+s.h+'</h3><p class="exc">'+s.full[0]+'</p><a class="more" href="'+u+'">전체 이야기 읽기 →</a></div></article>'}
   if(el=$('#homeStories'))el.innerHTML=[0,5,8].map(function(i){return storyCard(stories[i])}).join('');
-  if(el=$('#storyGroups')){var onHome=[0,5,8];el.innerHTML='<div class="stories">'+stories.filter(function(s,i){return onHome.indexOf(i)<0}).map(storyCard).join('')+'</div>'}
+  if(el=$('#storyGroups_off')){var onHome=[0,5,8];el.innerHTML='<div class="stories">'+stories.filter(function(s,i){return onHome.indexOf(i)<0}).map(storyCard).join('')+'</div>'}
   document.addEventListener('click',function(e){var b=e.target.closest('[data-more]');if(!b)return;var f=b.previousElementSibling;f.hidden=!f.hidden;b.textContent=f.hidden?'전체 이야기 읽기 +':'접기'});
   if(el=$('#marq')){var mq=finals.map(function(c){return '<span>'+c+'</span>'}).join('')+docs.map(function(c){return '<span class="doc">'+c+'</span>'}).join('');el.innerHTML=mq+mq}
   if(el=$('#marqFinal')){var mf=finals.map(function(c){return '<span>'+c+'</span>'}).join('');el.innerHTML=mf+mf}
@@ -278,9 +278,9 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
 
 /* records: board tabs + post view */
 (function(){
-  if(!document.querySelector('.rec-hero'))return;
+  if(!document.getElementById('recTabs'))return;
   var q=location.search;
-  if(/bmode=(view|write|modify)/.test(q)){document.body.classList.add('rec-view');document.querySelector('.rec-hero').hidden=true;var b=document.getElementById('recBack');if(b)b.hidden=false}
+  if(/bmode=(view|write|modify)/.test(q)){document.body.classList.add('rec-view');[].forEach.call(document.querySelectorAll('#cmx main > section'),function(x){x.hidden=true});var b=document.getElementById('recBack');if(b)b.hidden=false}
   var tabs=document.getElementById('recTabs');if(!tabs)return;
   function apply(c){[].forEach.call(document.querySelectorAll('._post_item_wrap'),function(it){var em=it.querySelector('.title-block em:not(.notice-block)');var cat=em?em.textContent.trim():'';it.style.display=(!c||cat===c)?'':'none'})}
   tabs.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;[].forEach.call(tabs.children,function(x){x.classList.toggle('on',x===b)});apply(b.getAttribute('data-c'))});
