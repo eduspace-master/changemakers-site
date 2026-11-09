@@ -83,7 +83,7 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
     ['아직 목표 회사가 정해지지 않았는데 괜찮을까요?','괜찮습니다. 지금까지의 경험과 관심사를 함께 살피는 것부터 시작해요. 신청서에도 아직 모르겠다고 적어 주세요.'],
     ['그룹 프로그램에서도 제 이야기를 따로 봐 주시나요?','네. 그룹 워크숍과 별도로 개인의 경험과 서류를 살피는 피드백을 진행합니다. 주간 체크인과 개별 첨삭, 실무·임원 모의면접을 통해 자신의 준비 상황을 점검합니다. 세부 구성은 커리어서프클럽 안내에서 확인할 수 있습니다.'],
     ['오프라인은 어디서 모이나요?','서울 강남구 도곡동 샤인스페이스입니다. 화·목 또는 수·금, 저녁 7시부터 10시까지 컨설턴트와 매니저들과 함께 준비합니다.'],
-    ['온라인에서는 어떻게 참여하나요?','정해진 시간에 실시간으로 접속하고, 온라인 전담 매니저와 준비를 진행합니다. 첨삭과 모의면접은 화상으로 참여합니다. 오리엔테이션·Feast는 현장에서 함께하며, 스타일 데이와 프로필 촬영의 방문 일정은 별도로 안내합니다.'],
+    ['온라인에서는 어떻게 참여하나요?','정해진 시간에 실시간으로 접속하고, 온라인 전담 매니저와 준비를 진행합니다. 첨삭과 모의면접은 화상으로 참여합니다. 오프닝과 피날레는 현장에서 함께하며, IMAGE DAY 방문 일정은 따로 안내합니다.'],
     ['너무 지쳐 있는데 따라갈 수 있을까요?','첫 주에는 경험과 고민을 함께 정리하는 데서 시작합니다. 다만 주 2회, 저녁 3시간의 참여 일정이 있으니 현재 상황에서 무리 없이 참여할 수 있을지 먼저 상담해 주세요.'],
     ['커리어서프클럽과 프라임클럽은 어떻게 다른가요?','커리어서프클럽은 정해진 일정에 동료들과 함께하는 4주 그룹 프로그램입니다. 프라임클럽은 목표와 준비 상황에 따라 코칭의 우선순위를 조정하는 1:1 과정입니다. 기간과 비용, 제공 항목은 각 프로그램 안내에서 확인해 주세요.'],
     ['결제와 환불은 어떻게 하나요?','카드·카카오페이·네이버페이·계좌이체로 결제할 수 있습니다. 개강 전 취소는 전액 환불하며, 시작 이후에는 해당 과정의 환불 기준에 따라 안내합니다. 결제 전에 과정별 시작일과 환불 안내를 확인해 주세요.'],
@@ -98,12 +98,14 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
     ['WAVE BOOK','4주가 한 권의 실물 바인더로','Career DNA 카드부터 면접 준비 노트까지, 4주 동안 만든 자료 10가지를 묶어 마지막 날 한 사람 한 사람에게 건넵니다.']
   ];
 
+  /* conference gallery */
+  document.addEventListener('click',function(e){var c=e.target.closest&&e.target.closest('.conf .pics');if(!c)return;var imgs=[].slice.call(c.querySelectorAll('img'));var t=c.closest('.conf').querySelector('h3');var box=document.createElement('div');box.className='cgal';box.innerHTML='<div class="cgal-in"><div class="cgal-top"><b>'+(t?t.textContent:'')+'</b><button type="button" aria-label="닫기">닫기 ✕</button></div><div class="cgal-grid">'+imgs.map(function(i){return '<img src="'+i.src+'" alt="'+(i.alt||'')+'">'}).join('')+'</div></div>';box.addEventListener('click',function(ev){if(ev.target===box||ev.target.closest('button'))box.remove()});(document.getElementById('cmx')||document.body).appendChild(box)});
   /* ---------- render ---------- */
   var el;
   if(el=$('#bubbles')){var pick=[1,5,6],bcls=['','r',''];el.innerHTML=pick.map(function(k,i){return '<div class="bubble '+bcls[i]+'">'+voices[k]+'<small>익명 인터뷰 '+String(k+1).padStart(2,'0')+'</small></div>'}).join('')}
   function storyCard(s){return '<article class="story"><div class="ph">'+img(s.k,s.n+'님')+'</div><div class="body"><div class="who"><b>'+s.n+'</b><span class="res'+(s.w?' wait':'')+'">'+s.r+'</span></div><span class="ctx">'+s.ctx+'</span><h3>'+s.h+'</h3><div class="row"><em>BEFORE</em>'+s.b+'</div><div class="row after"><em>WITH CHANGEMAKERS</em>'+s.a+'</div><div class="full" hidden>'+s.full.map(function(p){return '<p>'+p+'</p>'}).join('')+'</div><button class="more" data-more>전체 이야기 읽기 +</button></div></article>'}
   if(el=$('#homeStories'))el.innerHTML=[0,5,8].map(function(i){return storyCard(stories[i])}).join('');
-  if(el=$('#storyGroups'))el.innerHTML=groups.map(function(g,gi){return '<div class="sg-head"><h3>'+g[0]+'</h3><span>'+g[1]+'</span></div><div class="stories">'+stories.filter(function(s){return s.g===gi}).map(storyCard).join('')+'</div>'}).join('');
+  if(el=$('#storyGroups')){var gblock=function(gi){return '<div class="sg"><div class="sg-head"><h3>'+groups[gi][0]+'</h3><span>'+groups[gi][1]+'</span></div><div class="stories">'+stories.filter(function(s){return s.g===gi}).map(storyCard).join('')+'</div></div>'};el.innerHTML='<div class="sg-row">'+gblock(0)+gblock(3)+'</div>'+gblock(1)+gblock(2)}
   document.addEventListener('click',function(e){var b=e.target.closest('[data-more]');if(!b)return;var f=b.previousElementSibling;f.hidden=!f.hidden;b.textContent=f.hidden?'전체 이야기 읽기 +':'접기'});
   if(el=$('#marq')){var mq=finals.map(function(c){return '<span>'+c+'</span>'}).join('')+docs.map(function(c){return '<span class="doc">'+c+'</span>'}).join('');el.innerHTML=mq+mq}
   if(el=$('#marqFinal')){var mf=finals.map(function(c){return '<span>'+c+'</span>'}).join('');el.innerHTML=mf+mf}
