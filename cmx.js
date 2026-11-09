@@ -245,10 +245,8 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
 /* home: people marquee (V10) */
 (function(){
   var t=document.getElementById('peopleTrack');if(!t)return;
-  var P=[['p_david.jpg','David Y','에듀테크 기업 창업가'],['p_sarah.jpg','Sarah B','국제학교 창업가'],['p_ridia.jpg','Ridia S','국제기구 교육정책 전문가'],['p_esther.jpg','Esther L','HR 컨설턴트']];
-  var A=[['H**','엔터테인먼트사 현직'],['위****','게임사 대표'],['S**','외식 대기업 최연소 임원'],['삼성전자','전직 개발팀장 · 삼성페이'],['쿠*','현직 개발자'],['VC','현직 벤처캐피털리스트'],['L**','외국계 뷰티 대기업 팀장']];
-  var one=P.map(function(p){return '<a class="person-mini" href="/changemakers"><img src="'+CMX_BASE+'img/'+p[0]+'" alt="'+p[1]+'"><div><strong>'+p[1]+'</strong><small>'+p[2]+'</small></div></a>'}).join('')+
-    A.map(function(a){return '<a class="person-mini adv" href="/changemakers"><span class="ini">'+a[0]+'</span><div><strong>자문위원</strong><small>'+a[1]+'</small></div></a>'}).join('');
+  var P=[['p_david.jpg','David Y','에듀테크 기업 창업가','1,600명 조직을 최단기에 키운 창업가'],['p_sarah.jpg','Sarah B','국제학교 창업가','명문 국제학교 설립 · 아이비리그 진학 설계'],['p_ridia.jpg','Ridia S','국제기구 교육정책 전문가','개발도상국 교육정책 · 글로벌 역량'],['p_esther.jpg','Esther L','HR 컨설턴트','30여 개 기업 HRD · 교육공학 석사']];
+  var one=P.concat(P).map(function(p){return '<a class="person-mini face" href="/changemakers"><img src="'+CMX_BASE+'img/'+p[0]+'" alt="'+p[1]+'"><div><strong>'+p[1]+' <em>'+p[2]+'</em></strong><small>'+p[3]+'</small></div></a>'}).join('');
   t.innerHTML='<div class="pt-set">'+one+'</div><div class="pt-set" aria-hidden="true">'+one+'</div>';
   var m=t.parentNode;m.addEventListener('click',function(e){if(e.target.closest('a'))return;m.classList.toggle('paused')});
 })();
