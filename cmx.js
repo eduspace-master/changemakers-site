@@ -105,7 +105,7 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
   if(el=$('#bubbles')){var pick=[1,5,6],bcls=['','r',''];el.innerHTML=pick.map(function(k,i){return '<div class="bubble '+bcls[i]+'">'+voices[k]+'<small>익명 인터뷰 '+String(k+1).padStart(2,'0')+'</small></div>'}).join('')}
   function storyCard(s){return '<article class="story"><div class="ph">'+img(s.k,s.n+'님')+'</div><div class="body"><div class="who"><b>'+s.n+'</b><span class="res'+(s.w?' wait':'')+'">'+s.r+'</span></div><h3>'+s.h+'</h3><p class="exc">'+s.full[0]+'</p><div class="full" hidden>'+s.full.slice(1).map(function(p){return '<p>'+p+'</p>'}).join('')+'</div><button class="more" data-more>전체 이야기 읽기 +</button></div></article>'}
   if(el=$('#homeStories'))el.innerHTML=[0,5,8].map(function(i){return storyCard(stories[i])}).join('');
-  if(el=$('#storyGroups')){var gblock=function(gi){return '<div class="sg"><div class="sg-head"><h3>'+groups[gi][0]+'</h3><span>'+groups[gi][1]+'</span></div><div class="stories">'+stories.filter(function(s){return s.g===gi}).map(storyCard).join('')+'</div></div>'};el.innerHTML='<div class="sg-row">'+gblock(0)+gblock(3)+'</div>'+gblock(1)+gblock(2)}
+  if(el=$('#storyGroups')){var onHome=[0,5,8];el.innerHTML='<div class="stories">'+stories.filter(function(s,i){return onHome.indexOf(i)<0}).map(storyCard).join('')+'</div>'}
   document.addEventListener('click',function(e){var b=e.target.closest('[data-more]');if(!b)return;var f=b.previousElementSibling;f.hidden=!f.hidden;b.textContent=f.hidden?'전체 이야기 읽기 +':'접기'});
   if(el=$('#marq')){var mq=finals.map(function(c){return '<span>'+c+'</span>'}).join('')+docs.map(function(c){return '<span class="doc">'+c+'</span>'}).join('');el.innerHTML=mq+mq}
   if(el=$('#marqFinal')){var mf=finals.map(function(c){return '<span>'+c+'</span>'}).join('');el.innerHTML=mf+mf}
@@ -245,7 +245,7 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
 /* home: people marquee (V10) */
 (function(){
   var t=document.getElementById('peopleTrack');if(!t)return;
-  var P=[['p_david.jpg','David Y','에듀테크 기업 창업가','1,600명 조직을 최단기에 키운 창업가'],['p_sarah.jpg','Sarah B','국제학교 창업가','명문 국제학교 설립 · 글로벌 네트워크'],['p_ridia.jpg','Ridia S','국제기구 교육정책 전문가','세계 교육정책 · 개발도상국 교육 지원'],['p_esther.jpg','Esther L','HR 컨설턴트','30여 개 기업 HRD · 교육공학 석사']];
+  var P=[['p_david.jpg','David Y','에듀테크 기업 창업가','1,600명 조직을 최단기에 키운 창업가'],['p_sarah.jpg','Sarah B','국제학교 창업가','국제학교 설립 · 미래 인재 전략'],['p_ridia.jpg','Ridia S','국제기구 교육정책 전문가','국제기구 · 글로벌 역량'],['p_esther.jpg','Esther L','HR 컨설턴트','30여 개 기업 HRD · 교육공학 석사']];
   var one=P.concat(P).map(function(p){return '<a class="person-mini face" href="/changemakers"><img src="'+CMX_BASE+'img/'+p[0]+'" alt="'+p[1]+'"><div><strong>'+p[1]+' <em>'+p[2]+'</em></strong><small>'+p[3]+'</small></div></a>'}).join('');
   t.innerHTML='<div class="pt-set">'+one+'</div><div class="pt-set" aria-hidden="true">'+one+'</div>';
   var m=t.parentNode;m.addEventListener('click',function(e){if(e.target.closest('a'))return;m.classList.toggle('paused')});
