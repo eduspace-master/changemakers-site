@@ -276,12 +276,26 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
   el.innerHTML=h;
 })();
 
-/* records: board tabs + post view */
+/* stories: designed sections filled from the imweb board */
 (function(){
-  if(!document.getElementById('recTabs'))return;
-  var q=location.search;
-  if(/bmode=(view|write|modify)/.test(q)){document.body.classList.add('rec-view');[].forEach.call(document.querySelectorAll('#cmx main > section'),function(x){x.hidden=true});var b=document.getElementById('recBack');if(b)b.hidden=false}
-  var tabs=document.getElementById('recTabs');if(!tabs)return;
-  function apply(c){[].forEach.call(document.querySelectorAll('._post_item_wrap'),function(it){var em=it.querySelector('.title-block em:not(.notice-block)');var cat=em?em.textContent.trim():'';it.style.display=(!c||cat===c)?'':'none'})}
-  tabs.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;[].forEach.call(tabs.children,function(x){x.classList.toggle('on',x===b)});apply(b.getAttribute('data-c'))});
+  var sg=document.getElementById('boardStories'),cf=document.getElementById('boardConf');
+  if(!sg&&!cf)return;
+  if(/bmode=(view|write|modify)/.test(location.search)){document.body.classList.add('rec-view');[].forEach.call(document.querySelectorAll('#cmx main > section'),function(x){x.hidden=true});var bk=document.getElementById('recBack');if(bk)bk.hidden=false;return}
+  document.body.classList.add('board-src');
+  var base=location.pathname.replace(/\/$/,'');
+  var HOME=['175522231','175522191','175522167'];
+  function esc(t){return String(t||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  var items=[].map.call(document.querySelectorAll('._post_item_wrap'),function(it){var a=it.querySelector('a[href*="idx="]');var em=it.querySelector('.title-block em:not(.notice-block)');return {id:a?(a.getAttribute('href').match(/idx=(\d+)/)||[])[1]:'',cat:em?em.textContent.trim():''}}).filter(function(x){return x.id});
+  function load(id){var k='cmxB_'+id;try{var c=sessionStorage.getItem(k);if(c)return Promise.resolve(JSON.parse(c))}catch(e){}
+    return fetch(base+'/?bmode=view&idx='+id,{credentials:'same-origin'}).then(function(r){return r.text()}).then(function(h){var d=new DOMParser().parseFromString(h,'text/html');var v=d.querySelector('.board_txt_area')||d.createElement('div');var t=d.querySelector('.view_tit');var c=t&&t.querySelector('.category');var title=t?t.textContent.replace(c?c.textContent:'','').trim():'';var h3=v.querySelector('h3,h2');
+      var o={id:id,title:title,h:h3?h3.textContent.trim():'',ps:[].filter.call(v.querySelectorAll('p'),function(p){return !p.querySelector('img')&&p.textContent.trim()}).map(function(p){return p.textContent.trim()}),imgs:[].map.call(v.querySelectorAll('img'),function(i){return i.getAttribute('src')})};
+      try{sessionStorage.setItem(k,JSON.stringify(o))}catch(e){}return o})}
+  function card(o){var pt=o.title.split(' · '),n=pt[0],r=pt.slice(1).join(' · '),u=base+'/?bmode=view&idx='+o.id;var ps=o.ps.filter(function(p){return p.indexOf(n+' · ')!==0});
+    return '<article class="story"><a class="ph" href="'+u+'"><img src="'+esc(o.imgs[0])+'" alt="'+esc(n)+'님" loading="lazy"></a><div class="body"><div class="who"><b>'+esc(n)+'</b><span class="res'+(/대기|도전/.test(r)?' wait':'')+'">'+esc(r)+'</span></div><h3>'+esc(o.h)+'</h3><p class="exc">'+esc(ps[0])+'</p><a class="more" href="'+u+'">전체 이야기 읽기 →</a></div></article>'}
+  function conf(o,i){var m=o.title.match(/^(\d+)\s*회/),num=m?+m[1]:i+1,ord=({1:'1ST',2:'2ND',3:'3RD'})[num]||num+'TH',tags=[],txt=[];
+    o.ps.forEach(function(p){if(p.charAt(0)==='#')tags=p.split('#').map(function(x){return x.trim()}).filter(Boolean);else txt.push(p)});
+    return '<div class="conf'+(i%2?' flip':'')+'"><div class="txt"><div class="no">'+ord+' CHANGEMAKERS CONFERENCE</div><h3'+(/^[A-Za-z]/.test(o.h)?' class="en-h"':'')+'>'+esc(o.h)+'</h3><p>'+esc(txt.join(' '))+'</p><div class="tags">'+tags.map(function(t){return '<span>'+esc(t)+'</span>'}).join('')+'</div></div><div class="pics">'+o.imgs.map(function(s){return '<div class="ph"><img src="'+esc(s)+'" alt="" loading="lazy"></div>'}).join('')+'</div></div>'}
+  var st=items.filter(function(x){return x.cat==='스토리'&&HOME.indexOf(x.id)<0}),cs=items.filter(function(x){return x.cat==='컨퍼런스'});
+  if(sg)Promise.all(st.map(function(x){return load(x.id)})).then(function(a){sg.innerHTML=a.map(card).join('')});
+  if(cf)Promise.all(cs.map(function(x){return load(x.id)})).then(function(a){a.sort(function(p,q){return (parseInt(p.title,10)||0)-(parseInt(q.title,10)||0)});cf.innerHTML=a.map(conf).join('')});
 })();
