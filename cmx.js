@@ -82,20 +82,20 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
   var faqs=[
     ['아직 목표 회사가 정해지지 않았는데 괜찮을까요?','괜찮습니다. 지금까지의 경험과 관심사를 함께 살피는 것부터 시작해요. 신청서에도 아직 모르겠다고 적어 주세요.'],
     ['그룹 프로그램에서도 제 이야기를 따로 봐 주시나요?','네. 그룹 워크숍과 별도로 개인의 경험과 서류를 살피는 피드백을 진행합니다. 주간 체크인과 개별 첨삭, 실무·임원 모의면접을 통해 자신의 준비 상황을 점검합니다. 세부 구성은 커리어서프클럽 안내에서 확인할 수 있습니다.'],
-    ['오프라인은 어디서 모이나요?','서울 강남구 도곡동 샤인스페이스입니다. 화·목 또는 수·금, 오후 2시부터 7시까지 컨설턴트와 매니저들과 함께 준비합니다.'],
+    ['오프라인은 어디서 모이나요?','서울 강남구 도곡동 샤인스페이스입니다. 화·목 또는 수·금, 저녁 7시부터 10시까지 컨설턴트와 매니저들과 함께 준비합니다.'],
     ['온라인에서는 어떻게 참여하나요?','정해진 시간에 실시간으로 접속하고, 온라인 전담 매니저와 준비를 진행합니다. 첨삭과 모의면접은 화상으로 참여합니다. 오리엔테이션·Feast는 현장에서 함께하며, 스타일 데이와 프로필 촬영의 방문 일정은 별도로 안내합니다.'],
-    ['너무 지쳐 있는데 따라갈 수 있을까요?','첫 주에는 경험과 고민을 함께 정리하는 데서 시작합니다. 다만 주 2회, 회당 5시간의 참여 일정이 있으니 현재 상황에서 무리 없이 참여할 수 있을지 먼저 상담해 주세요.'],
+    ['너무 지쳐 있는데 따라갈 수 있을까요?','첫 주에는 경험과 고민을 함께 정리하는 데서 시작합니다. 다만 주 2회, 저녁 3시간의 참여 일정이 있으니 현재 상황에서 무리 없이 참여할 수 있을지 먼저 상담해 주세요.'],
     ['커리어서프클럽과 프라임클럽은 어떻게 다른가요?','커리어서프클럽은 정해진 일정에 동료들과 함께하는 4주 그룹 프로그램입니다. 프라임클럽은 목표와 준비 상황에 따라 코칭의 우선순위를 조정하는 1:1 과정입니다. 기간과 비용, 제공 항목은 각 프로그램 안내에서 확인해 주세요.'],
     ['결제와 환불은 어떻게 하나요?','카드·카카오페이·네이버페이·계좌이체로 결제할 수 있습니다. 개강 전 취소는 전액 환불하며, 시작 이후에는 해당 과정의 환불 기준에 따라 안내합니다. 결제 전에 과정별 시작일과 환불 안내를 확인해 주세요.'],
     ['신청서를 쓰면 바로 결제되나요?','아니요. 당신을 이해하기 위한 첫 기록입니다. 적어 주신 이야기를 읽고 연락드리며, 상담 후에 프로그램을 함께 고릅니다. 프라임클럽 1:1은 프로그램 페이지에서 바로 결제할 수도 있습니다.']
   ];
   var benefits=[
-    ['한 사람을 위한 전략','매주 월요일 전략 회의','컨설턴트와 매니저가 Crew 한 사람 한 사람의 준비 상황을 놓고 다음 과제를 정하고, 주간 체크인 15분으로 전합니다.'],
-    ['자기소개서 첨삭과 재작성','개별 첨삭과 수정본 검토','내 경험의 의미를 찾고, 기업에 맞는 지원 서류로 구체화합니다. 워크숍 자리에서 바로 다시 씁니다.'],
-    ['실무와 임원 모의면접','실무자 면접 · 임원 면접, 각 1회','실제로 답해 보고, 인터뷰에서 더 선명하게 전할 내용을 정리합니다. 피드백을 다음 답변에 반영합니다.'],
-    ['개인 이미지 컨설팅','개인별 스타일 제안 · 프로필 촬영','면접 복장과 인상, 자세를 점검하고 프로필 사진으로 기록합니다. 온라인 Crew의 방문 촬영 일정은 별도로 안내합니다.'],
-    ['현장 전문가 키노트','뽑는 쪽의 사람들','F&B 분야 임원과 전직 대기업 HR 임원의 경험을 통해 기업과 직무의 관점을 듣습니다.'],
-    ['기업 탐색에서 실제 지원까지','나에게 맞는 기업 탐색 · 실제 지원 관리','어디에 왜 지원할지 정하고 진행 상황을 함께 확인합니다. 4주간 50곳 이상 지원을 목표로 하며, 개인별 준비 상황과 채용공고에 맞춰 일정을 조정합니다.']
+    ['한 사람을 위한 전략','매주 월요일 Strategy Room','전문가와 운영진이 Crew 한 명 한 명의 과제와 지원 현황을 놓고 전략 회의를 엽니다. 피드백은 그 주 첫 모임에서 개인별로 받습니다.'],
+    ['마스터 서류와 첨삭','마스터 이력서 · 자기소개서 · 기업별 맞춤본','핵심 스토리를 서류의 언어로 옮기고, 동료 리뷰와 컨설턴트 첨삭을 거쳐 기업마다 맞춤 메시지로 다듬습니다.'],
+    ['Target 20 지원 전략','Reach · Match · Safety로 나눈 지원 리스트','산업과 직무, 기업을 분석하고 FIT을 검증해 4주 지원 캘린더를 짭니다. APPLY DAY에는 그 자리에서 실제로 지원합니다.'],
+    ['IMAGE DAY','이미지 진단 · 스타일 처방 · 새 프로필 촬영','컬러와 얼굴형, 체형 진단으로 면접 룩과 헤어를 처방받고, 보이스 클리닉까지. 피날레 날 새로운 모습으로 프로필을 촬영합니다.'],
+    ['키노트와 면접 특강','평범함이 무기가 되는 순간 · 면접관은 무엇을 보는가','첫 모임 키노트로 시작해, 마지막 날에는 전직 대기업 HR 임원의 면접 준비 특강으로 마무리합니다.'],
+    ['WAVE BOOK','4주가 한 권의 실물 바인더로','Career DNA 카드부터 면접 준비 노트까지, 4주 동안 만든 자료 10가지를 묶어 마지막 날 한 사람 한 사람에게 건넵니다.']
   ];
 
   /* ---------- render ---------- */
@@ -155,7 +155,7 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
   function inp(key,type,ph,ac){return '<input type="'+type+'" data-in="'+key+'" value="'+esc(H.d[key])+'" placeholder="'+esc(ph||'')+'"'+(ac?' autocomplete="'+ac+'"':'')+'>'}
   function ta(key,ph){return '<textarea data-in="'+key+'" placeholder="'+esc(ph||'')+'">'+esc(H.d[key])+'</textarea>'}
   var progs=[
-    {g:'커리어서프클럽 · 4주 그룹 · 12월 2일 시작',items:[['surf-mt-off','화·목 오프라인 Crew','14시부터 19시'],['surf-mt-on','화·목 온라인 Crew','14시부터 19시'],['surf-tf-off','수·금 오프라인 Crew','14시부터 19시'],['surf-tf-on','수·금 온라인 Crew','14시부터 19시']]},
+    {g:'커리어서프클럽 · 4주 그룹 · 12월 2일 시작',items:[['surf-mt-off','화·목 오프라인 Crew','19시부터 22시'],['surf-mt-on','화·목 온라인 Crew','19시부터 22시'],['surf-tf-off','수·금 오프라인 Crew','19시부터 22시'],['surf-tf-on','수·금 온라인 Crew','19시부터 22시']]},
     {g:'프라임클럽 · 1:1',items:[['prime-new','신입 취업 프로그램','6주 · 1,800,000원'],['prime-move','경력 이직 프로그램','6주 · 2,400,000원'],['prime-pf','포트폴리오 프로그램','4주 · 990,000원'],['prime-intern','인턴십 프로그램','2,500,000원']]},
     {g:'추가 과정 · 서프클럽 Crew 한정',items:[['interview-2w','심층면접대비 2주 과정','Crew 한정가 290,000원']]},
     {g:'아직 잘 모르겠어요',items:[['unsure','상담하며 함께 정하고 싶어요','지금의 나에게 맞는 방식을 함께 찾아요']]}
@@ -238,4 +238,40 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
   function go(){if(started)return;started=true;i=-1;t=setInterval(tick,1300)}
   if('IntersectionObserver' in window){new IntersectionObserver(function(es){if(es[0].isIntersecting)go()},{threshold:.3}).observe(j)}else go();
   window.addEventListener('resize',function(){set(Math.max(i,0))});
+})();
+
+/* home: people marquee (V10) */
+(function(){
+  var t=document.getElementById('peopleTrack');if(!t)return;
+  var P=[['p_david.jpg','David Y','에듀테크 기업 창업가'],['p_sarah.jpg','Sarah B','국제학교 창업가'],['p_ridia.jpg','Ridia S','국제기구 교육정책 전문가'],['p_esther.jpg','Esther L','HR 컨설턴트']];
+  var A=[['H**','엔터테인먼트사 현직'],['위****','게임사 대표'],['S**','외식 대기업 최연소 임원'],['삼성전자','전직 개발팀장 · 삼성페이'],['쿠*','현직 개발자'],['VC','현직 벤처캐피털리스트'],['L**','외국계 뷰티 대기업 팀장']];
+  var one=P.map(function(p){return '<a class="person-mini" href="/changemakers"><img src="'+CMX_BASE+'img/'+p[0]+'" alt="'+p[1]+'"><div><strong>'+p[1]+'</strong><small>'+p[2]+'</small></div></a>'}).join('')+
+    A.map(function(a){return '<a class="person-mini adv" href="/changemakers"><span class="ini">'+a[0]+'</span><div><strong>자문위원</strong><small>'+a[1]+'</small></div></a>'}).join('');
+  t.innerHTML='<div class="pt-set">'+one+'</div><div class="pt-set" aria-hidden="true">'+one+'</div>';
+  var m=t.parentNode;m.addEventListener('click',function(e){if(e.target.closest('a'))return;m.classList.toggle('paused')});
+})();
+
+/* surf: chapter tabs */
+(function(){
+  var t=document.getElementById('chTabs');if(!t)return;
+  t.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+    [].forEach.call(t.children,function(x){x.classList.toggle('on',x===b)});
+    [].forEach.call(document.querySelectorAll('#chPanels .ch-panel'),function(p){p.hidden=p.getAttribute('data-p')!==b.getAttribute('data-ch')});
+  });
+})();
+/* surf: december calendar (Mon start) */
+(function(){
+  var el=document.getElementById('dcal');if(!el)return;
+  var ev={30:[['mon','전략 회의']],2:[['wf','1 OPENING']],3:[['tt','1 OPENING']],4:[['wf','2회차']],6:[['note','과제 제출']],
+    7:[['mon','전략 회의']],8:[['tt','2회차']],9:[['wf','3회차']],10:[['tt','3회차']],11:[['wf','4회차']],13:[['note','과제 제출']],
+    14:[['mon','전략 회의']],15:[['tt','4회차']],16:[['wf','5회차']],17:[['tt','5회차']],18:[['wf','6회차']],20:[['note','과제 제출']],
+    21:[['mon','전략 회의']],22:[['tt','6회차']],23:[['wf','7 IMAGE']],24:[['tt','7 IMAGE']],25:[['note','성탄절 휴강']],27:[],
+    28:[['mon','최종 점검']],29:[['tt','8 FINALE']],31:[]};
+  ev['w30']=[['wf','8 FINALE']];
+  var weeks=[[['11. 30',30,'p'],[1],[2],[3],[4],[5],[6]],[[7],[8],[9],[10],[11],[12],[13]],[[14],[15],[16],[17],[18],[19],[20]],[[21],[22],[23],[24],[25],[26],[27]],[[28],[29],['30','w30'],[31],[],[],[]]];
+  var h='<div class="dc-h"></div>'+['MON','TUE','WED','THU','FRI','SAT','SUN'].map(function(d){return '<div class="dc-h">'+d+'</div>'}).join('');
+  weeks.forEach(function(w,i){h+='<div class="dc-w en">W'+(i+1)+'</div>';w.forEach(function(c){if(!c.length){h+='<div class="dc-d empty"></div>';return}
+    var lab=c[0],key=c[1]!==undefined?c[1]:c[0];var es=ev[key]||[];
+    h+='<div class="dc-d"><span class="n">'+lab+'</span>'+es.map(function(x){return '<span class="ev '+x[0]+'">'+x[1]+'</span>'}).join('')+'</div>'})});
+  el.innerHTML=h;
 })();
