@@ -2018,12 +2018,12 @@ body.cmx-on #cmx{overflow:visible!important;overflow-x:clip!important}
 #cmx .marq-sea::after{bottom:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='60' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0 30 C240 0 480 60 720 30 S1200 0 1440 30 V60 H0Z' fill='%23ffffff' fill-opacity='.07'/%3E%3C/svg%3E");animation:seaw 26s linear infinite reverse}
 @keyframes seaw{to{background-position:1440px 0}}
 #cmx .marq-sea .marq{border:0!important;background:none!important;position:relative;z-index:1}
-#cmx .marq.big .marq-track{gap:14px!important}
+#cmx .marq.big .marq-track{gap:56px!important}
 #cmx .marq.big .marq-track span::after{display:none!important}
-#cmx .marq.big .marq-track span{font-size:26px!important;font-weight:800!important;color:#fff!important;letter-spacing:-.02em;padding:14px 26px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);box-shadow:0 10px 30px rgba(6,24,90,.18);backdrop-filter:blur(2px)}
-#cmx .marq.big.doc .marq-track span{color:rgba(255,255,255,.62)!important;font-weight:600!important;font-size:20px!important;background:transparent;border-color:rgba(255,255,255,.14);box-shadow:none}
+#cmx .marq.big .marq-track span{font-size:34px!important;font-weight:800!important;color:#fff!important;letter-spacing:-.03em;padding:6px 0;background:none;border:0}
+#cmx .marq.big.doc .marq-track span{color:rgba(255,255,255,.5)!important;font-weight:600!important;font-size:22px!important}
 #cmx .marq-sea .sea-fine{position:relative;z-index:1;max-width:1200px;margin:34px auto 0;padding:0 28px;font-size:12.5px;color:rgba(255,255,255,.6)}
-@media (max-width:760px){#cmx .marq.big .marq-track span{font-size:17px!important;padding:10px 18px}#cmx .marq.big.doc .marq-track span{font-size:14px!important}#cmx .marq-sea{padding:60px 0 50px}}
+@media (max-width:760px){#cmx .marq.big .marq-track{gap:32px!important}#cmx .marq.big .marq-track span{font-size:22px!important}#cmx .marq.big.doc .marq-track span{font-size:15px!important}#cmx .marq-sea{padding:60px 0 50px}}
 /* conference: clickable photo + gallery */
 #cmx .conf .pics{cursor:zoom-in;position:relative}
 #cmx .conf .pics::after{content:"현장 사진 더 보기 +";position:absolute;right:14px;bottom:14px;background:rgba(16,33,59,.85);color:#fff;font-size:13px;font-weight:700;padding:9px 14px;border-radius:4px}
@@ -2045,3 +2045,11 @@ body.cmx-on #cmx{overflow:visible!important;overflow-x:clip!important}
 #cmx .hero-wave:hover .hw-d{color:var(--ink)}
 @keyframes cmxPulse{0%,100%{box-shadow:0 0 0 3px rgba(32,87,245,.22)}50%{box-shadow:0 0 0 7px rgba(32,87,245,0)}}
 #cmx .v10hero{padding-top:44px!important}
+/* fewer boxes: line-based labels instead of pills */
+#cmx .stories .story .body{padding:22px 2px 6px!important;background:none!important;border-top:0!important}
+#cmx .story .res{background:none!important;border:0!important;padding:0!important;border-radius:0!important;color:var(--blue,#2057f5)!important;font-size:12px!important;font-weight:800!important;letter-spacing:-.01em}
+#cmx .story .res.wait{color:#8a8f99!important}
+#cmx .conf .tags{gap:0!important;margin-top:16px!important}
+#cmx .conf .tags span{background:none!important;border:0!important;padding:0!important;border-radius:0!important;font-size:12.5px!important;font-weight:700!important;color:#6b7280!important}
+#cmx .conf .tags span+span::before{content:"·";margin:0 10px;color:#c3c0b8}
+#cmx .conf .pics::after{background:none!important;padding:0 0 3px!important;border-radius:0!important;border-bottom:1.5px solid #fff;right:20px!important;bottom:18px!important;text-shadow:0 1px 8px rgba(0,0,0,.45)}
