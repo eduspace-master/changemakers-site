@@ -10,6 +10,7 @@ body.cmx-on .section_wrap .inside, body.cmx-on .section_wrap .container, body.cm
 #cmx a:hover{text-decoration:none}
 #cmx ul,#cmx ol{margin:0;padding:0}
 #cmx li{list-style:none}
+body.cmx-on #cmx{overflow:visible!important;overflow-x:clip!important}
 #cmx input,#cmx textarea{font-family:inherit}
 #cmx{
   --blue:#2057f5;--blue-d:#1745ca;--ink:#10213b;--cream:#f6f5f1;--muted:#5f6b7c;--lime:#2057f5;--line:#d5d9df;
@@ -2005,8 +2006,6 @@ body.cmx-on .section_wrap .inside, body.cmx-on .section_wrap .container, body.cm
 #cmx .plus{border-radius:4px!important}
 #cmx .pcard{padding:0!important}
 
-/* sticky header fix: no scroll container on wrapper */
-#cmx #cmx{overflow:visible!important;overflow-x:clip!important}
 /* story groups: 다시 힘을 내고 싶다면 + 새 길로 가고 싶다면 in one row */
 #cmx .sg-row{display:grid;grid-template-columns:2fr 1fr;gap:24px}
 #cmx .sg-row .sg:first-child .stories{grid-template-columns:repeat(2,1fr)!important}
