@@ -22,6 +22,13 @@ body.cmx-on .board_view .category{color:#2057f5!important;font-weight:800!import
 body.cmx-on .board_view img{border-radius:4px;max-width:100%!important;height:auto!important}
 body.cmx-on .board_view h3{font-size:24px!important;font-weight:800!important;line-height:1.45!important;color:#10213b!important;margin:36px 0 20px!important;letter-spacing:-.03em}
 body.cmx-on .board_view p{font-size:17px!important;line-height:1.85!important;color:#3d4655!important;margin:0 0 16px!important}
+body.board-src .type_grid,body.board-src ._list_wrap .pagination,body.board-src ._list_wrap [class*=paging]{display:none!important}
+body.board-src .doz_row:has(._post_item_wrap){padding:0 28px 40px!important}
+body.cmx-on .type_grid:has(._post_item_wrap){display:flex!important;flex-wrap:wrap}
+body.cmx-on .type_grid ._post_row{display:contents!important}
+body.cmx-on ._card_wrap:has(> ._post_item_wrap[style*="none"]){display:none!important}
+body.cmx-on .type_grid ._card_wrap{width:33.3333%!important;flex:0 0 33.3333%!important;box-sizing:border-box}
+@media(max-width:760px){body.cmx-on .type_grid ._card_wrap{width:100%!important;flex-basis:100%!important}}
 body.cmx-on ._post_item_wrap .card{border:0!important;background:none!important;box-shadow:none!important}
 body.cmx-on ._post_item_wrap .card-head{border-radius:4px;overflow:hidden}
 body.cmx-on ._post_item_wrap .card-head img{transition:transform .5s}
@@ -2116,3 +2123,4 @@ body.cmx-on #cmx{overflow:visible!important;overflow-x:clip!important}
 /* stories: board head sits right on the board */
 #cmx .board-head{background:#f6f5f1!important;padding-bottom:0!important}
 #cmx .board-head .rec-tabs{margin-top:8px}
+#cmx .board-loading{grid-column:1/-1;color:var(--muted);font-size:14px;padding:40px 0}
