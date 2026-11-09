@@ -1854,8 +1854,11 @@ body.cmx-on #cmx{overflow:visible!important;overflow-x:clip!important}
 #cmx .meet .pincard h3{font-size:19px!important}
 #cmx .meet .pincard .rows>div{padding:9px 0!important}
 #cmx .meet .pincard .btn{padding:14px!important}
-#cmx .meet-wave{display:block;width:200%;height:40px;margin:34px 0 -6px;overflow:visible;animation:cmxWave 14s linear infinite}
-#cmx .meet-wave path{fill:none;stroke:#fff;stroke-width:2;opacity:.75}
+#cmx .mw-wrap{width:min(560px,100%);height:34px;overflow:hidden;margin:20px 0 6px;-webkit-mask:linear-gradient(90deg,#000 80%,transparent);mask:linear-gradient(90deg,#000 80%,transparent)}
+#cmx .meet-wave{display:block;width:200%;height:34px;overflow:visible;animation:cmxWave 6s linear infinite}
+#cmx .meet-wave path{fill:none;stroke:#fff;stroke-width:5;stroke-linecap:round;vector-effect:non-scaling-stroke}
+#cmx .meet-wave .mw2{stroke:#7fe3c8;stroke-width:5;stroke-dasharray:60 340;animation:mwRun 2.4s linear infinite}
+@keyframes mwRun{to{stroke-dashoffset:-400}}
 @keyframes cmxWave{to{transform:translateX(-50%)}}
 #cmx .meet .section{overflow:hidden}
 #cmx .meet .facts-row{margin-top:18px!important}
@@ -2050,3 +2053,15 @@ body.cmx-on #cmx{overflow:visible!important;overflow-x:clip!important}
 #cmx .conf .tags span+span::before{content:"·";margin:0 10px;color:#c3c0b8}
 #cmx .conf .pics::after{background:none!important;padding:0 0 3px!important;border-radius:0!important;border-bottom:1.5px solid #fff;right:20px!important;bottom:18px!important;text-shadow:0 1px 8px rgba(0,0,0,.45)}
 #cmx .band:has(>.marq-sea)>.section{padding-top:72px!important;padding-bottom:40px!important}
+
+/* journey: no floating dot; the current step label gets the blue */
+#cmx .jn-dot{display:none!important}
+#cmx .jn-step b{display:inline-block!important;padding:5px 12px;border-radius:4px;transition:background .5s,color .5s}
+#cmx .jn-step.now b{background:var(--blue);color:#fff!important}
+/* story card: the story itself, no before/after */
+#cmx .story .ctx,#cmx .story .row{display:none!important}
+#cmx .story .body{gap:10px!important}
+#cmx .story h3{font-size:19px!important;line-height:1.45!important;margin:2px 0 0!important}
+#cmx .story .exc,#cmx .story .full p{font-size:15px!important;line-height:1.75!important;color:#3d4655!important;margin:0!important}
+#cmx .story .full p{margin-top:10px!important}
+#cmx .story .more{margin-top:6px!important}
