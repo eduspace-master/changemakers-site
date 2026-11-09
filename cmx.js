@@ -245,7 +245,7 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
 /* home: people marquee (V10) */
 (function(){
   var t=document.getElementById('peopleTrack');if(!t)return;
-  var P=[['p_david.jpg','David Y','에듀테크 기업 창업가','1,600명 조직을 최단기에 키운 창업가'],['p_sarah.jpg','Sarah B','국제학교 창업가','명문 국제학교 설립 · 글로벌 역량 강화'],['p_ridia.jpg','Ridia S','국제기구 교육정책 전문가','세계 교육정책 · 개발도상국 교육 지원'],['p_esther.jpg','Esther L','HR 컨설턴트','30여 개 기업 HRD · 교육공학 석사']];
+  var P=[['p_david.jpg','David Y','에듀테크 기업 창업가','1,600명 조직을 최단기에 키운 창업가'],['p_sarah.jpg','Sarah B','국제학교 창업가','명문 국제학교 설립 · 글로벌 네트워크'],['p_ridia.jpg','Ridia S','국제기구 교육정책 전문가','세계 교육정책 · 개발도상국 교육 지원'],['p_esther.jpg','Esther L','HR 컨설턴트','30여 개 기업 HRD · 교육공학 석사']];
   var one=P.concat(P).map(function(p){return '<a class="person-mini face" href="/changemakers"><img src="'+CMX_BASE+'img/'+p[0]+'" alt="'+p[1]+'"><div><strong>'+p[1]+' <em>'+p[2]+'</em></strong><small>'+p[3]+'</small></div></a>'}).join('');
   t.innerHTML='<div class="pt-set">'+one+'</div><div class="pt-set" aria-hidden="true">'+one+'</div>';
   var m=t.parentNode;m.addEventListener('click',function(e){if(e.target.closest('a'))return;m.classList.toggle('paused')});
