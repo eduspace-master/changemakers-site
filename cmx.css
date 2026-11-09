@@ -2029,3 +2029,13 @@ body.cmx-on .section_wrap .inside, body.cmx-on .section_wrap .container, body.cm
 #cmx .cgal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 #cmx .cgal-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
 @media (max-width:760px){#cmx .cgal-grid{grid-template-columns:1fr 1fr}}
+/* home hero: surf club line moved under the buttons (no price) */
+#cmx .v10hero{padding-bottom:72px!important}
+#cmx .hero-wave{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:34px;padding:16px 0 0;border-top:1px solid var(--line);color:var(--ink);text-decoration:none!important;max-width:560px}
+#cmx .hero-wave .hw-live{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:800;color:var(--blue)}
+#cmx .hero-wave .hw-live i{width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px rgba(32,87,245,.18);animation:cmxPulse 1.6s infinite}
+#cmx .hero-wave .hw-d{font-size:14px;font-weight:600;color:#4a5568}
+#cmx .hero-wave .hw-go{margin-left:auto;font-weight:800;color:var(--blue)}
+#cmx .hero-wave:hover .hw-d{color:var(--ink)}
+@keyframes cmxPulse{0%,100%{box-shadow:0 0 0 3px rgba(32,87,245,.22)}50%{box-shadow:0 0 0 7px rgba(32,87,245,0)}}
+#cmx .v10hero{padding-top:44px!important}
