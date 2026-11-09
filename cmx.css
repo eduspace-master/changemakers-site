@@ -2065,3 +2065,11 @@ body.cmx-on #cmx{overflow:visible!important;overflow-x:clip!important}
 #cmx .story .exc,#cmx .story .full p{font-size:15px!important;line-height:1.75!important;color:#3d4655!important;margin:0!important}
 #cmx .story .full p{margin-top:10px!important}
 #cmx .story .more{margin-top:6px!important}
+/* home people strip: faces only, no pill boxes */
+#cmx .person-mini.face{width:auto;min-width:420px;border:0;border-radius:0;background:none;padding:0 56px 0 0;gap:22px}
+#cmx .person-mini.face img{width:96px;height:96px}
+#cmx .person-mini.face:hover img{filter:none}
+#cmx .person-mini.face strong{font-size:22px;font-weight:800;letter-spacing:-.03em}
+#cmx .person-mini.face strong em{font-style:normal;font-size:14px;font-weight:700;color:var(--blue);margin-left:8px;letter-spacing:-.01em}
+#cmx .person-mini.face small{font-size:15px;font-weight:600;color:var(--ink);margin-top:8px}
+@media (max-width:760px){#cmx .person-mini.face{min-width:300px;padding-right:32px}#cmx .person-mini.face img{width:72px;height:72px}#cmx .person-mini.face strong{font-size:18px}#cmx .person-mini.face small{font-size:13px}}
