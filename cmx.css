@@ -2,7 +2,7 @@
 
 /* imweb shell: hide imweb header/footer on pages that carry the cmx widget, make the widget full-bleed */
 body.cmx-on #doz_header_wrap, body.cmx-on #doz_footer_wrap{display:none!important}
-body.cmx-on{background:#f6f5f1!important;overflow-x:hidden}
+body.cmx-on{background:#f6f5f1!important;overflow-x:clip}
 body.cmx-on .section_wrap{padding:0!important}
 body.cmx-on .section_wrap .inside, body.cmx-on .section_wrap .container, body.cmx-on .section_wrap .row, body.cmx-on .section_wrap [class*="col-"], body.cmx-on .section_wrap .widget{padding-left:0!important;padding-right:0!important;max-width:none!important;width:100%!important;margin-left:0!important;margin-right:0!important}
 #cmx :where(*:not(svg,svg *)){all:revert}
@@ -2004,3 +2004,28 @@ body.cmx-on .section_wrap .inside, body.cmx-on .section_wrap .container, body.cm
 @media(max-width:860px){#cmx .situ3>div{border-right:0;border-bottom:1px solid var(--line);margin-right:0;padding:24px 0!important}}
 #cmx .plus{border-radius:4px!important}
 #cmx .pcard{padding:0!important}
+
+/* sticky header fix: no scroll container on wrapper */
+#cmx #cmx{overflow:visible!important;overflow-x:clip!important}
+/* story groups: 다시 힘을 내고 싶다면 + 새 길로 가고 싶다면 in one row */
+#cmx .sg-row{display:grid;grid-template-columns:2fr 1fr;gap:24px}
+#cmx .sg-row .sg:first-child .stories{grid-template-columns:repeat(2,1fr)!important}
+#cmx .sg-row .sg:last-child .stories{grid-template-columns:1fr!important}
+@media (max-width:900px){#cmx .sg-row{grid-template-columns:1fr}#cmx .sg-row .sg:first-child .stories{grid-template-columns:1fr!important}}
+/* success marquee: blue wave pills */
+#cmx .marq.big .marq-track{gap:14px!important}
+#cmx .marq.big .marq-track span::after{display:none!important}
+#cmx .marq.big .marq-track span{font-size:24px!important;font-weight:800!important;color:#fff!important;letter-spacing:-.02em;padding:16px 30px 22px;border-radius:999px;background:#2057f5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='16' viewBox='0 0 120 16'%3E%3Cpath d='M0 8 Q15 0 30 8 T60 8 T90 8 T120 8 V16 H0Z' fill='%23ffffff' fill-opacity='.16'/%3E%3C/svg%3E") repeat-x left bottom/120px 16px}
+#cmx .marq.big.doc .marq-track span{color:#10213b!important;font-weight:700!important;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='16' viewBox='0 0 120 16'%3E%3Cpath d='M0 8 Q15 0 30 8 T60 8 T90 8 T120 8 V16 H0Z' fill='%232057f5' fill-opacity='.12'/%3E%3C/svg%3E") repeat-x left bottom/120px 16px;border:1px solid #dcd9d0}
+@media (max-width:760px){#cmx .marq.big .marq-track span{font-size:17px!important;padding:12px 20px 16px}}
+/* conference: clickable photo + gallery */
+#cmx .conf .pics{cursor:zoom-in;position:relative}
+#cmx .conf .pics::after{content:"현장 사진 더 보기 +";position:absolute;right:14px;bottom:14px;background:rgba(16,33,59,.85);color:#fff;font-size:13px;font-weight:700;padding:9px 14px;border-radius:4px}
+#cmx .cgal{position:fixed;inset:0;z-index:99999;background:rgba(10,18,34,.86);display:flex;align-items:center;justify-content:center;padding:4vh 4vw}
+#cmx .cgal-in{background:#f6f5f1;border-radius:4px;max-width:1200px;width:100%;max-height:92vh;overflow:auto;padding:24px}
+#cmx .cgal-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+#cmx .cgal-top b{font-size:22px;font-weight:800;color:#10213b}
+#cmx .cgal-top button{background:none;border:0;font-size:15px;font-weight:700;color:#10213b;cursor:pointer}
+#cmx .cgal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+#cmx .cgal-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+@media (max-width:760px){#cmx .cgal-grid{grid-template-columns:1fr 1fr}}
