@@ -22,7 +22,7 @@ body.cmx-on .board_view .category{color:#2057f5!important;font-weight:800!import
 body.cmx-on .board_view img{border-radius:4px;max-width:100%!important;height:auto!important}
 body.cmx-on .board_view h3{font-size:24px!important;font-weight:800!important;line-height:1.45!important;color:#10213b!important;margin:36px 0 20px!important;letter-spacing:-.03em}
 body.cmx-on .board_view p{font-size:17px!important;line-height:1.85!important;color:#3d4655!important;margin:0 0 16px!important}
-body.board-src .type_grid,body.board-src ._list_wrap .pagination,body.board-src ._list_wrap [class*=paging]{display:none!important}
+body.board-src .doz_row:has(._post_item_wrap) .type_grid,body.board-src ._list_wrap .pagination,body.board-src ._list_wrap [class*=paging]{display:none!important}
 body.board-src .doz_row:has(._post_item_wrap){padding:0 28px 40px!important}
 body.cmx-on .type_grid:has(._post_item_wrap){display:flex!important;flex-wrap:wrap}
 body.cmx-on .type_grid ._post_row{display:contents!important}
@@ -668,7 +668,8 @@ body.cmx-on #cmx{overflow:visible!important;overflow-x:clip!important}
 #cmx .letter-body .sig{font-size:13px;color:var(--muted)}
 
 /* ===== hello form ===== */
-#cmx .form-grid{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+#cmx .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+#cmx .form-grid>aside .ph{aspect-ratio:16/9;height:auto!important;min-height:0!important}#cmx .form-grid>aside .ph img{width:100%;height:100%!important;object-fit:cover}
 #cmx .form-grid>*{min-width:0}
 #cmx .panel{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:44px 42px}
 #cmx .q-progress{display:flex;gap:6px;margin-bottom:30px}
@@ -1601,6 +1602,20 @@ body.cmx-on #cmx{overflow:visible!important;overflow-x:clip!important}
 #cmx .nbar b{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #cmx .nbar small{font-size:11px;opacity:.75}
 #cmx .wk-band .fine{color:#9cabc1}
+#cmx .circle{margin-top:70px}
+#cmx .circle-in{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start;border-top:2px solid var(--blue);padding-top:28px}
+#cmx .circle-copy h3{font-size:30px;line-height:1.25;letter-spacing:-.03em}
+#cmx .circle-copy p{color:#b9c0cc;font-size:15px;line-height:1.75;margin-top:14px}
+#cmx .circle-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:3px}
+#cmx .circle-list li{background:#1f2e4a;padding:20px 20px 22px;display:flex;flex-direction:column;gap:6px}
+#cmx .circle-list li:nth-child(1){background:var(--blue)}
+#cmx .circle-list small{font-size:12px;letter-spacing:.12em;color:#9cc0ff}
+#cmx .circle-list li:nth-child(1) small{color:#dbe6ff}
+#cmx .circle-list b{font-size:18px}
+#cmx .circle-list span{font-size:14px;color:#c7cfdb}
+#cmx .circle .fine{margin-top:16px}
+@media (max-width:900px){#cmx .circle-in{grid-template-columns:1fr;gap:24px}#cmx .circle-copy h3{font-size:24px}}
+
 
 /* goal funnel: no boxes */
 #cmx .funnel-note>div{background:none!important;border:0!important;border-top:2px solid var(--blue)!important;border-radius:0!important;box-shadow:none!important}
