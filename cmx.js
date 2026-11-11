@@ -300,3 +300,5 @@ if(!location.hash){window.scrollTo({top:0,left:0,behavior:"instant"})}
   if(sg)Promise.all(st.map(function(x){return load(x.id)})).then(function(a){sg.innerHTML=a.map(card).join('')});
   if(cf)Promise.all(cs.map(function(x){return load(x.id)})).then(function(a){a.sort(function(p,q){return (parseInt(p.title,10)||0)-(parseInt(q.title,10)||0)});cf.innerHTML=a.map(conf).join('')});
 })();
+/* circle growth dots */
+(function(){document.querySelectorAll('#cmx .sc2-dots').forEach(function(d){var n=+d.dataset.n||0,g=+d.dataset.g||0,x=+d.dataset.x||0,h='';for(var i=0;i<n;i++)h+='<i></i>';for(i=0;i<g;i++)h+='<i class="g"></i>';for(i=0;i<x;i++)h+='<i class="x"></i>';d.innerHTML=h});})();
